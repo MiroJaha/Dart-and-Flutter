@@ -1,0 +1,16 @@
+final String firstName = "Coding";
+const String lastName = "Dojo";
+
+void main() {
+  // Mutable
+  var number = 55;
+  // Also mutable
+  double height = 5.5;
+  var isCold = false;
+  mad(number,height);
+  print("The Weather is Cold= $isCold");
+}
+
+void mad(int a, double b){
+  print("Name $firstName $lastName\nThe Multible Of $a*$b= ${a*b}");
+}

@@ -1,0 +1,14 @@
+void main() { 
+  var name = returnName(9,name: "jkh");
+  var height = returnHeight(5,5,8);
+}
+//declaring our function with named parameter
+//and default value
+String returnName(int a,{String name = "default name"}){
+  return "My name is $name";
+}
+//No named parameter and optional second parameter
+//if no value is given it will use default value
+String returnHeight(int feet,[int inches = 0,int adt=6]){
+  return "I am $feet feet and $inches inches tall";
+}
