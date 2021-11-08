@@ -1,0 +1,42 @@
+//we need this to use pi 
+import "dart:math";
+void main() {
+  
+  var square = Square(side: 10.0);
+  print(square.area());
+  
+  var circle = Circle(radius: 5.0);
+  print(circle.area());
+  
+  //In here we can pass both a square and circle 
+  //since they both implement the Shape class
+  //and this works the same as above. 
+  printArea(square);
+  printArea(circle);
+  
+}
+//Here we make a function that takes the abstract class
+//as a parameter and remember any class that implements 
+//this interface has the .area() method
+void printArea(Shape shape){
+  print(shape.area());
+}
+abstract class Shape{
+  //Notice we are not implementing the function
+  //we are only defining the function
+  double area();
+}
+class Square implements Shape{
+  double side;
+  
+  Square({this.side = 0.0});
+  @override
+  double area()=> side * side;
+}
+class Circle implements Shape{
+  double radius;
+  
+  Circle({this.radius = 0.0});
+  @override
+  double area()=> radius * radius * pi;
+}

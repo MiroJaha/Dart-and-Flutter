@@ -1,0 +1,37 @@
+void main() { 
+  
+  var person = Person(name: "Kim");
+  person.sayName();
+  
+  var student = Student(gpa: 3.5,nm:"Ali");
+  student.sayName();
+  student.sayGPA();
+  
+  student = Student.second(gpa: 10,name2:"Maha");
+  student.sayName();
+  student.sayGPA();
+  
+}
+class Person{
+  String? name;
+  
+  Person({this.name});
+  
+  void sayName(){
+    print("My name is $name");
+  }
+  
+}
+class Student extends Person{
+  
+  double? gpa;
+  
+  Student.second({String? name2, this.gpa}): super(name: name2);
+  Student({this.gpa,nm}){
+    name= nm;
+  }
+  
+  void sayGPA(){
+    print("My gpa is $gpa");
+  }
+}

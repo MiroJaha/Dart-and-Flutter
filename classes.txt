@@ -1,0 +1,49 @@
+void main() { 
+  
+  var person = SimplePerson();
+  person.name = "Rod";
+  person.lastName = "Toy";
+  print(person.name!+person.lastName);
+  print(person.age);
+  print("Gender: ${person.gender}\nLocation: ${person.location}");
+  person.gender = "Female";
+  person.location= "Indonesia";
+  print("Gender: ${person.gender}\nLocation: ${person.location}");
+  
+  //Note we cannot omit the arguments or we will get an error
+  final person2 = ComplexPerson("Joe", 5);
+  
+  print(person2.name);
+  print(person2.age);
+  
+  final person3= ComplexPerson.named(name: "Alin",age: 18);
+  print(person3.name);
+  print(person3.age);
+  
+  final person4= ComplexPerson.named();
+  print(person4.name);
+  print(person4.age);
+}
+//This SimplePerson class can be initialized with no parameters
+//and we gave the variables the ability to be null by adding the ?
+//by using no constructor the instance variables are not required
+class SimplePerson{
+  late String lastName;
+  String? name;
+  int? age;
+  String? gender="Male";
+  String location= "Saudi";
+  
+}
+//This ComplexPerson class has to be initialized with both positional instance variables
+//we do this by using the constructor with the short cut 
+//this.(then your variable name)
+class ComplexPerson{
+  String? name;
+  int? age;
+  
+  ComplexPerson(this.name, this.age);
+  
+  ComplexPerson.named({this.name, this.age});
+  
+}

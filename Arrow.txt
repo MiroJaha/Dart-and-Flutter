@@ -1,0 +1,12 @@
+void main() { 
+  
+  var name = returnName(name: "John");
+  var name2 = returnName2(name: "Kat");
+  
+  print(name+" "+name2);
+}
+String returnName({String name = "default name"}){
+  return "My name is $name";
+}
+String returnName2({String name = "default name"}) => 
+  "My name is $name";

@@ -1,0 +1,26 @@
+void main() { 
+  
+  // Since age is optional and can be null we don't have to initialize it
+  // however our name and email is required
+  var firstUser = User("Miro","miro.tune@gmail.com",18);
+  print("Name: ${firstUser.name}\nEmail: ${firstUser.email}\nAge: ${firstUser.age}");
+  
+  var firstUser2 = User.second(email:"mohammed.n.jaha123@gmail.com",name:"MJ");
+  print("Name: ${firstUser2.name}\nEmail: ${firstUser2.email}\nAge: ${firstUser2.age}");
+}
+// Here our name and email instance variables are required and we do this
+// by using the "required" keyword in our constructor. 
+// Note: we don't have to mark these variables with ? because Dart 
+// knows that these variables are required and will never be null.
+// And since age is optional and can be null we mark it with a ?
+class User{
+  String name;
+  String email;
+  int? age;
+  
+  User.second({required this.name,required this.email,this.age});
+  
+  User(this.name,this.email,age){
+    this.age = age;
+  }
+}

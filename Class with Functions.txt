@@ -1,0 +1,25 @@
+void main() { 
+  
+  var myCat = Cat(name: "Bubbles", age: 3);
+  
+  // We call our method by using the dot notation 
+  myCat.meow();
+  
+}
+class Cat{
+  String name;
+  final int age;
+  
+  Cat({required this.name, required this.age});
+  
+  // This is an instance method it lives inside our class
+  // it even has access to our variables!! so cool 
+  void meow(){
+    print("meow! My name is $name");
+    dead(age);
+  }
+  static void dead(int age){
+    print("No Access\nAge= $age");
+  }
+  
+}
