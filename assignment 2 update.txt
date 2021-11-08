@@ -1,0 +1,51 @@
+void main() { 
+  int x=5;
+  int number;
+  if(x>=0&&x<=13){
+    number=x;
+  }
+  else{
+    number=0;
+  }
+  String color;
+  String c="Red";
+  if(c.contains("Red")||c.contains("Black")){
+    color=c;
+  }
+  else{
+    color="No color";
+  }
+  var card = Card(house: "Queen",number: number,color: color);
+  print(card.cardIdentity());
+  
+  
+  var deck = Deck().createCards();
+  
+  for(Card i in deck){
+    print(i.cardIdentity());
+  }
+}
+
+class Card{
+  String house;
+  int number;
+  String color;
+  
+  Card({required this.house,required this.number,required this.color});
+  
+  String cardIdentity() => "$house $number $color";
+}
+
+class Deck{
+  List<Card> cards=[];
+  
+  List createCards(){
+    for (int i=1;i<=13;i++){
+      cards.add(Card(house: "Diamonds",number: i,color: "Red"));
+      cards.add(Card(house: "Hearts",number: i,color: "Red"));
+      cards.add(Card(house: "Spade",number: i,color: "black"));
+      cards.add(Card(house: "Clubs",number: i,color: "black"));
+    }    
+    return cards;
+  }
+}
