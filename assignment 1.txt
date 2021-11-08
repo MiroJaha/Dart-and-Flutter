@@ -1,0 +1,22 @@
+import 'dart:math';
+
+void main() { 
+  
+  print(createDeveloper("Miro",12.5,true));
+  print(createDeveloper("Mira",10.5,false));
+  print("The Solution of sqrt(3^2+4^2)= ${solvePyth(3,4)}");
+  print("The Distance Between point(1,1) and point(1,5)= ${distance(1,2,1,5)}");
+}
+
+String createDeveloper(String name, double height, bool isNewDeveloper){
+  if (!isNewDeveloper){
+    return "This developer $name is $height feet tall is not a new developer";
+  }
+  return "This developer $name is $height feet tall is a new developer";
+}
+
+//A^2 + B^2 = C^2
+double solvePyth(int a,b) => sqrt(pow(a,2)+pow(b,2));
+
+//√[(x2 − x1)2 + (y2 − y1)2]
+double distance(int x1,y1,x2,y2) => sqrt(pow(x2-x1,2)+pow(y2-y1,2));
